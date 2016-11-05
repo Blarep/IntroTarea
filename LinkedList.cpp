@@ -27,7 +27,40 @@ void recorrer_lista(node *ptr) //asi recorremos las listas
 		contador=(contador+1);
 	}	
 }
-
+void que_hacer(node *ptr)
+{
+	cout<<"Si desea añadir nodo ingrese 1"<<endl;
+	cout<<"Si desea recorrer la lista ingrese 2"<<endl;
+	cout<<"Si ya no quiere hacer nada ingrese 3"<<endl;
+	int opcion;
+	int valor;
+	cin>>opcion;
+	node *ptr_final;
+	ptr_final=ptr;
+	if(opcion==1)
+	{
+		while(ptr_final->next!=NULL) //aqui obtenemos el puntero del ultimo nodo para asi poder añadir el nodo nuevo al final
+		{
+			ptr_final=ptr_final->next;
+		}
+		cout<<ptr_final<<endl;
+		cout<<"Que valor tendra el puntero?"<<endl;
+		cin>>valor;
+		add_node(ptr_final,valor);
+		que_hacer(ptr);
+		
+	}
+	if(opcion==2)
+	{
+		recorrer_lista(ptr);
+		que_hacer(ptr);
+	}
+	if(opcion==3)
+	{
+		cout<<"Fin del programa"<<endl;
+	}
+	
+}
 int main()
 {
     node *ptr; //el primero
@@ -38,6 +71,6 @@ int main()
 	add_node(ptr->next,3);  //otro mas
     cout << ptr <<"-"<< ptr->next <<"-"<<ptr->next->next<<endl;
     cout << ptr->value << ptr->next->value<<ptr->next->next->value<<endl; //se imprimen los valores de ambos nodos
-    recorrer_lista(ptr);
+    que_hacer(ptr);
     return 0;
 }
