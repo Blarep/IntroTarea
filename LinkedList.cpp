@@ -22,10 +22,14 @@ void recorrer_lista(node *ptr) //asi recorremos las listas
 	contador=1; //para saber en que puntero vamos
 	while(ptr!=NULL) //mientras el puntero no sea null es que hay mas punteros
 	{
-		cout<<"Puntero "<<contador<<"="<<ptr->value<<endl; //se imprime la "posicion del puntero" y su valor
+		cout<<"Nodo "<<contador<<"="<<ptr->value<<endl; //se imprime la "posicion del puntero" y su valor
 		ptr=ptr->next ; //actualizamos la direccion del puntero por la del siguiente para seguir avanzando en la lista
 		contador=(contador+1);
 	}	
+}
+void eliminar_nodo(int numero_del_nodo)
+{
+	
 }
 void que_hacer(node *ptr)
 {
