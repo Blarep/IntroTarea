@@ -27,8 +27,11 @@ void recorrer_lista(node *ptr) //asi recorremos las listas
 		contador=(contador+1);
 	}	
 }
-void eliminar_nodo(int numero_del_nodo)
+void eliminar_nodo(int numero_del_nodo, node *ptr)
 {
+	cout<<"Lista de nodos"<<endl;
+	recorrer_lista(ptr);
+	
 	
 }
 void que_hacer(node *ptr)
@@ -47,7 +50,7 @@ void que_hacer(node *ptr)
 		{
 			ptr_final=ptr_final->next;
 		}
-		cout<<ptr_final<<endl;
+		//cout<<ptr_final<<endl; era una linea de testeo para saber cual era el ptr final
 		cout<<"Que valor tendra el puntero?"<<endl;
 		cin>>valor;
 		add_node(ptr_final,valor);
