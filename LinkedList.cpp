@@ -27,18 +27,37 @@ void recorrer_lista(node *ptr) //asi recorremos las listas
 		contador=(contador+1);
 	}	
 }
-void eliminar_nodo(int numero_del_nodo, node *ptr)
+void eliminar_nodo(node *ptr)
 {
-	cout<<"Lista de nodos"<<endl;
+	int n_nodo; //numero de nodo que se eliminara
+	int c; //contador para recorrer la lista
+	node *ptr_aux; //almacenara el puntero anterior al que queremos eliminar
+	node *ptr_aux2; //almacenara el puntero que viene despues del que queremos eliminar
+	c=1;
+	ptr_aux=ptr;
+	ptr_aux2=ptr;
+	cout<<"Lista de nodos"<<endl; //se muestran los nodos
 	recorrer_lista(ptr);
-	
-	
+	cout<<"Que nodo desea eliminar?"<<endl;
+	cin>>n_nodo;
+	while(c<(n_nodo-1))//aqui se obtiene el puntero al que apunta el nodo que queremos eliminar
+	{
+		ptr_aux=ptr_aux->next;
+		c=c+1;
+	}
+	while(c<=n_nodo) //aqui obtendremos el puntero del nodo al que apunta el que queremos eliminar
+	{
+		ptr_aux2=ptr_aux2->next;
+		c=c+1;
+	}
+	ptr_aux->ptr_aux2;
 }
 void que_hacer(node *ptr)
 {
 	cout<<"Si desea añadir nodo ingrese 1"<<endl;
 	cout<<"Si desea recorrer la lista ingrese 2"<<endl;
-	cout<<"Si ya no quiere hacer nada ingrese 3"<<endl;
+	cout<<"Si desea eliminar un nodo ingrese 3"<<endl;
+	cout<<"Si ya no quiere hacer nada ingrese 4"<<endl;
 	int opcion;
 	int valor;
 	cin>>opcion;
@@ -62,7 +81,11 @@ void que_hacer(node *ptr)
 		recorrer_lista(ptr);
 		que_hacer(ptr);
 	}
-	if(opcion==3)
+	if{opcion==3}
+	{
+		
+	}
+	if(opcion==4)
 	{
 		cout<<"Fin del programa"<<endl;
 	}
